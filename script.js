@@ -54,8 +54,8 @@ function fullReset() {
   count.innerText = '0';
   total.innerText = '0';
 
-  selectedSeats = document.querySelectorAll('.row .seat.selected');
-  seatArray = Array.from(selectedSeats);
+  const selectedSeats = document.querySelectorAll('.row .seat.selected');
+  const seatArray = Array.from(selectedSeats);
 
   seatArray.forEach((selectedSeat) =>
     selectedSeat.classList.remove('selected')
