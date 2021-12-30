@@ -48,6 +48,20 @@ function populateUI() {
   }
 }
 
+// Perform a full UI reset
+function fullReset() {
+  localStorage.clear();
+  count.innerText = '0';
+  total.innerText = '0';
+
+  selectedSeats = document.querySelectorAll('.row .seat.selected');
+  seatArray = Array.from(selectedSeats);
+
+  seatArray.forEach((selectedSeat) =>
+    selectedSeat.classList.remove('selected')
+  );
+}
+
 // Movie select event
 movieSelect.addEventListener('change', (e) => {
   ticketPrice = e.target.value;
@@ -65,6 +79,11 @@ container.addEventListener('click', (e) => {
 
     updateSelectedCount();
   }
+});
+
+// Reset button click event
+reset.addEventListener('click', (e) => {
+  fullReset();
 });
 
 // Initial count and total set
